@@ -1,0 +1,28 @@
+
+
+
+class Printer {
+	function void clean() {
+		do Screen.clearScreen();
+		return;
+	}
+
+	function void drawLine(Point p1, Point p2) {
+		do Screen.drawLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		return;
+	}
+
+	function void printPoint(Point p) {
+		do Screen.setColor(true);
+		do Screen.drawPixel(p.getX(), p.getY());
+		return;
+	}
+
+	function void printRect(Point p1, Point p2, Point p3, Point p4) {
+		do Printer.drawLine(p1, p2);
+		do Printer.drawLine(p2, p3);
+		do Printer.drawLine(p3, p4);
+		do Printer.drawLine(p4, p1);
+		return;
+	}
+}

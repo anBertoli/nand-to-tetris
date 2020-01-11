@@ -1,0 +1,225 @@
+// constructor
+function SquareGame.new 0
+push constant 2
+call Memory.alloc 1
+pop pointer 0
+// let statement
+// function call
+push constant 0
+push constant 0
+push constant 30
+call Square.new 3
+pop this 0
+// let statement
+push constant 0
+pop this 1
+// return statement 
+push pointer 0
+return
+// method
+function SquareGame.dispose 0
+push argument 0
+pop pointer 0
+// do statement
+// instance call
+push this 0
+call Square.dispose 1
+pop temp 0 
+// do statement
+// function call
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0 
+// return statement 
+push constant 0 
+return
+// method
+function SquareGame.moveSquare 0
+push argument 0
+pop pointer 0
+// if statement
+push this 1
+push constant 1
+eq
+not
+if-goto IF_FALSE_2
+// do statement
+// instance call
+push this 0
+call Square.moveUp 1
+pop temp 0 
+label IF_FALSE_2
+// if statement
+push this 1
+push constant 2
+eq
+not
+if-goto IF_FALSE_4
+// do statement
+// instance call
+push this 0
+call Square.moveDown 1
+pop temp 0 
+label IF_FALSE_4
+// if statement
+push this 1
+push constant 3
+eq
+not
+if-goto IF_FALSE_6
+// do statement
+// instance call
+push this 0
+call Square.moveLeft 1
+pop temp 0 
+label IF_FALSE_6
+// if statement
+push this 1
+push constant 4
+eq
+not
+if-goto IF_FALSE_8
+// do statement
+// instance call
+push this 0
+call Square.moveRight 1
+pop temp 0 
+label IF_FALSE_8
+// do statement
+// function call
+push constant 5
+call Sys.wait 1
+pop temp 0 
+// return statement 
+push constant 0 
+return
+// method
+function SquareGame.run 2
+push argument 0
+pop pointer 0
+// let statement
+push constant 0
+pop local 1
+// while statement
+label WHILE_START_27
+push local 1
+not
+not
+if-goto WHILE_END_28
+// while statement
+label WHILE_START_9
+push local 0
+push constant 0
+eq
+not
+if-goto WHILE_END_10
+// let statement
+// function call
+call Keyboard.keyPressed 0
+pop local 0
+// do statement
+// instance call
+push pointer 0
+call SquareGame.moveSquare 1
+pop temp 0 
+goto WHILE_START_9
+label WHILE_END_10
+// if statement
+push local 0
+push constant 81
+eq
+not
+if-goto IF_FALSE_12
+// let statement
+push constant 1 
+ neg
+pop local 1
+label IF_FALSE_12
+// if statement
+push local 0
+push constant 90
+eq
+not
+if-goto IF_FALSE_14
+// do statement
+// instance call
+push this 0
+call Square.decSize 1
+pop temp 0 
+label IF_FALSE_14
+// if statement
+push local 0
+push constant 88
+eq
+not
+if-goto IF_FALSE_16
+// do statement
+// instance call
+push this 0
+call Square.incSize 1
+pop temp 0 
+label IF_FALSE_16
+// if statement
+push local 0
+push constant 131
+eq
+not
+if-goto IF_FALSE_18
+// let statement
+push constant 1
+pop this 1
+label IF_FALSE_18
+// if statement
+push local 0
+push constant 133
+eq
+not
+if-goto IF_FALSE_20
+// let statement
+push constant 2
+pop this 1
+label IF_FALSE_20
+// if statement
+push local 0
+push constant 130
+eq
+not
+if-goto IF_FALSE_22
+// let statement
+push constant 3
+pop this 1
+label IF_FALSE_22
+// if statement
+push local 0
+push constant 132
+eq
+not
+if-goto IF_FALSE_24
+// let statement
+push constant 4
+pop this 1
+label IF_FALSE_24
+// while statement
+label WHILE_START_25
+push local 0
+push constant 0
+eq
+not
+not
+if-goto WHILE_END_26
+// let statement
+// function call
+call Keyboard.keyPressed 0
+pop local 0
+// do statement
+// instance call
+push pointer 0
+call SquareGame.moveSquare 1
+pop temp 0 
+goto WHILE_START_25
+label WHILE_END_26
+goto WHILE_START_27
+label WHILE_END_28
+// return statement 
+push constant 0 
+return

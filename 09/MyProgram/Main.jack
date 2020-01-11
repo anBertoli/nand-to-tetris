@@ -1,0 +1,29 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/09/HelloWorld/Main.jack
+
+/** Hello World program. */
+
+class Main {
+
+   function void main() {
+      do Output.printString("Start program!");
+      do Output.println();
+      do Main.printRect();
+      return;
+   }
+
+   function void printRect() {
+   		var Point p1, p2, p3, p4;
+   		let p1 = Point.new(20,20);
+   		let p2 = Point.new(60,20);
+   		let p3 = Point.new(20,80);
+   		let p4 = Point.new(60,80);
+   		do Printer.clean();
+   		do Printer.printRect(p1, p2, p3, p4);
+   		return;
+   }
+
+
+}

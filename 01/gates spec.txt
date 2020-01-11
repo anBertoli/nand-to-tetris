@@ -1,0 +1,89 @@
+NAND is the basic one
+
+
+NOT
+Not(x) = Nand(x, x)
+
+
+AND
+And(x,y) = Not(Nand(x,y))
+
+
+OR
+Or(x,y) = Nand(Not(x), Not(y))
+
+
+XOR
+Xor(x,y) = And( Not(And(x,y)), Or(x,y) )
+
+
+MULTIPLEXER
+Mux(a,b,sel) = Or( And(Not(sel),a), And(sel,b) ) 
+
+
+DEMULTIPLEXER
+Demux(in,sel) = And(Not(sel), in)
+			    And(sel, in)
+
+
+
+
+
+MULTI-BIT NOT
+Not16(in[16]) = Not(in[0])
+				...
+				...
+				Not(in[15])
+
+
+MULTI-BIT AND
+And16(a[16], b[16]) = And(a[0], b[0])
+					  ...
+					  ...
+					  And(a[15], b[15])
+
+
+MULTI-BIT OR
+Or16(a[16], b[16]) = Or(a[0], b[0])
+					 ...
+					 ...
+					 Or(a[15], b[15])
+
+
+
+MULTI-BIT MULTIPLEXER
+Mux16(a[16], b[16], sel) = Mux(a[0], b[0], sel)
+					  	   ...
+					  	   ...
+					  	   Mux(a[15], b[15], sel)
+
+
+
+
+
+MULTI-WAY OR
+Or8Way = Or(in[8], ... Or(in[2], Or(in[0], in[1])))))))
+
+
+MULTI-WAY DEMULTIPLEXER
+DMux8Way(in,sel[2]) = 
+    DMux(in=in, sel=sel[0], a=aceg, b=bdfh);
+    DMux(in=aceg, sel=sel[1], a=ae, b=cg);
+    DMux(in=ae, sel=sel[2], a=a, b=e);
+    DMux(in=cg, sel=sel[2], a=c, b=g);
+    DMux(in=bdfh, sel=sel[1], a=bf, b=dh);
+    DMux(in=bf, sel=sel[2], a=b, b=f);
+    DMux(in=dh, sel=sel[2], a=d, b=h);
+
+
+MULTI-WAY MULTIBIT MULTIPLEXER
+Mux8Way16(a[16], b[16], ..., h[16], sel[2]) =
+	Mux16(a=a, b=b, sel=sel[0], out=l);
+    Mux16(a=c, b=d, sel=sel[0], out=m);
+    Mux16(a=e, b=f, sel=sel[0], out=n);
+    Mux16(a=g, b=h, sel=sel[0], out=o);
+    Mux16(a=l, b=m, sel=sel[1], out=p);
+    Mux16(a=n, b=o, sel=sel[1], out=q);
+    Mux16(a=p, b=q, sel=sel[2], out=out);
+	
+	

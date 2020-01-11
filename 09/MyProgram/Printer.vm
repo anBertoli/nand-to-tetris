@@ -1,0 +1,50 @@
+function Printer.clean 0
+call Screen.clearScreen 0
+pop temp 0
+push constant 0
+return
+function Printer.drawLine 0
+push argument 0
+call Point.getX 1
+push argument 0
+call Point.getY 1
+push argument 1
+call Point.getX 1
+push argument 1
+call Point.getY 1
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Printer.printPoint 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push argument 0
+call Point.getX 1
+push argument 0
+call Point.getY 1
+call Screen.drawPixel 2
+pop temp 0
+push constant 0
+return
+function Printer.printRect 0
+push argument 0
+push argument 1
+call Printer.drawLine 2
+pop temp 0
+push argument 1
+push argument 2
+call Printer.drawLine 2
+pop temp 0
+push argument 2
+push argument 3
+call Printer.drawLine 2
+pop temp 0
+push argument 3
+push argument 0
+call Printer.drawLine 2
+pop temp 0
+push constant 0
+return

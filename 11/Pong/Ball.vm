@@ -1,0 +1,543 @@
+// constructor
+function Ball.new 0
+push constant 15
+call Memory.alloc 1
+pop pointer 0
+// let statement
+push argument 0
+pop this 0
+// let statement
+push argument 1
+pop this 1
+// let statement
+push argument 2
+pop this 10
+// let statement
+push argument 3
+push constant 6
+sub
+pop this 11
+// let statement
+push argument 4
+pop this 12
+// let statement
+push argument 5
+push constant 6
+sub
+pop this 13
+// let statement
+push constant 0
+pop this 14
+// do statement
+// instance call
+push pointer 0
+call Ball.show 1
+pop temp 0 
+// return statement 
+push pointer 0
+return
+// method
+function Ball.dispose 0
+push argument 0
+pop pointer 0
+// do statement
+// function call
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0 
+// return statement 
+push constant 0 
+return
+// method
+function Ball.show 0
+push argument 0
+pop pointer 0
+// do statement
+// function call
+push constant 1 
+ neg
+call Screen.setColor 1
+pop temp 0 
+// do statement
+// instance call
+push pointer 0
+call Ball.draw 1
+pop temp 0 
+// return statement 
+push constant 0 
+return
+// method
+function Ball.hide 0
+push argument 0
+pop pointer 0
+// do statement
+// function call
+push constant 0
+call Screen.setColor 1
+pop temp 0 
+// do statement
+// instance call
+push pointer 0
+call Ball.draw 1
+pop temp 0 
+// return statement 
+push constant 0 
+return
+// method
+function Ball.draw 0
+push argument 0
+pop pointer 0
+// do statement
+// function call
+push this 0
+push this 1
+push this 0
+push constant 5
+add
+push this 1
+push constant 5
+add
+call Screen.drawRectangle 4
+pop temp 0 
+// return statement 
+push constant 0 
+return
+// method
+function Ball.getLeft 0
+push argument 0
+pop pointer 0
+// return statement 
+push this 0
+return
+// method
+function Ball.getRight 0
+push argument 0
+pop pointer 0
+// return statement 
+push this 0
+push constant 5
+add
+return
+// method
+function Ball.setDestination 3
+push argument 0
+pop pointer 0
+// let statement
+push argument 0
+push this 0
+sub
+pop this 2
+// let statement
+push argument 1
+push this 1
+sub
+pop this 3
+// let statement
+// function call
+push this 2
+call Math.abs 1
+pop local 0
+// let statement
+// function call
+push this 3
+call Math.abs 1
+pop local 1
+// let statement
+push local 0
+push local 1
+lt
+pop this 7
+// if statement
+push this 7
+not
+if-goto IF_TRUE_1
+// let statement
+push local 0
+pop local 2
+// let statement
+push local 1
+pop local 0
+// let statement
+push local 2
+pop local 1
+// let statement
+push this 1
+push argument 1
+lt
+pop this 8
+// let statement
+push this 0
+push argument 0
+lt
+pop this 9
+goto IF_FALSE_2
+label IF_TRUE_1
+// let statement
+push this 0
+push argument 0
+lt
+pop this 8
+// let statement
+push this 1
+push argument 1
+lt
+pop this 9
+label IF_FALSE_2
+// let statement
+push constant 2
+push local 1
+call Math.multiply 2
+push local 0
+sub
+pop this 4
+// let statement
+push constant 2
+push local 1
+call Math.multiply 2
+pop this 5
+// let statement
+push constant 2
+push local 1
+push local 0
+sub
+call Math.multiply 2
+pop this 6
+// return statement 
+push constant 0 
+return
+// method
+function Ball.move 0
+push argument 0
+pop pointer 0
+// do statement
+// instance call
+push pointer 0
+call Ball.hide 1
+pop temp 0 
+// if statement
+push this 4
+push constant 0
+lt
+not
+if-goto IF_TRUE_3
+// let statement
+push this 4
+push this 5
+add
+pop this 4
+goto IF_FALSE_4
+label IF_TRUE_3
+// let statement
+push this 4
+push this 6
+add
+pop this 4
+// if statement
+push this 9
+not
+if-goto IF_TRUE_7
+// if statement
+push this 7
+not
+if-goto IF_TRUE_5
+// let statement
+push this 0
+push constant 4
+add
+pop this 0
+goto IF_FALSE_6
+label IF_TRUE_5
+// let statement
+push this 1
+push constant 4
+add
+pop this 1
+label IF_FALSE_6
+goto IF_FALSE_8
+label IF_TRUE_7
+// if statement
+push this 7
+not
+if-goto IF_TRUE_9
+// let statement
+push this 0
+push constant 4
+sub
+pop this 0
+goto IF_FALSE_10
+label IF_TRUE_9
+// let statement
+push this 1
+push constant 4
+sub
+pop this 1
+label IF_FALSE_10
+label IF_FALSE_8
+label IF_FALSE_4
+// if statement
+push this 8
+not
+if-goto IF_TRUE_13
+// if statement
+push this 7
+not
+if-goto IF_TRUE_11
+// let statement
+push this 1
+push constant 4
+add
+pop this 1
+goto IF_FALSE_12
+label IF_TRUE_11
+// let statement
+push this 0
+push constant 4
+add
+pop this 0
+label IF_FALSE_12
+goto IF_FALSE_14
+label IF_TRUE_13
+// if statement
+push this 7
+not
+if-goto IF_TRUE_15
+// let statement
+push this 1
+push constant 4
+sub
+pop this 1
+goto IF_FALSE_16
+label IF_TRUE_15
+// let statement
+push this 0
+push constant 4
+sub
+pop this 0
+label IF_FALSE_16
+label IF_FALSE_14
+// if statement
+push this 0
+push this 10
+gt
+not
+not
+if-goto IF_FALSE_18
+// let statement
+push constant 1
+pop this 14
+// let statement
+push this 10
+pop this 0
+label IF_FALSE_18
+// if statement
+push this 0
+push this 11
+lt
+not
+not
+if-goto IF_FALSE_20
+// let statement
+push constant 2
+pop this 14
+// let statement
+push this 11
+pop this 0
+label IF_FALSE_20
+// if statement
+push this 1
+push this 12
+gt
+not
+not
+if-goto IF_FALSE_22
+// let statement
+push constant 3
+pop this 14
+// let statement
+push this 12
+pop this 1
+label IF_FALSE_22
+// if statement
+push this 1
+push this 13
+lt
+not
+not
+if-goto IF_FALSE_24
+// let statement
+push constant 4
+pop this 14
+// let statement
+push this 13
+pop this 1
+label IF_FALSE_24
+// do statement
+// instance call
+push pointer 0
+call Ball.show 1
+pop temp 0 
+// return statement 
+push this 14
+return
+// method
+function Ball.bounce 5
+push argument 0
+pop pointer 0
+// let statement
+push this 2
+push constant 10
+call Math.divide 2
+pop local 2
+// let statement
+push this 3
+push constant 10
+call Math.divide 2
+pop local 3
+// if statement
+push argument 0
+push constant 0
+eq
+not
+if-goto IF_TRUE_25
+// let statement
+push constant 10
+pop local 4
+goto IF_FALSE_26
+label IF_TRUE_25
+// if statement
+push this 2
+push constant 0
+lt
+not
+push argument 0
+push constant 1
+eq
+and
+push this 2
+push constant 0
+lt
+push argument 0
+push constant 1
+neg
+eq
+and
+or
+not
+if-goto IF_TRUE_27
+// let statement
+push constant 20
+pop local 4
+goto IF_FALSE_28
+label IF_TRUE_27
+// let statement
+push constant 5
+pop local 4
+label IF_FALSE_28
+label IF_FALSE_26
+// if statement
+push this 14
+push constant 1
+eq
+not
+if-goto IF_TRUE_29
+// let statement
+push constant 506
+pop local 0
+// let statement
+push local 3
+push constant 50
+neg
+call Math.multiply 2
+push local 2
+call Math.divide 2
+pop local 1
+// let statement
+push this 1
+push local 1
+push local 4
+call Math.multiply 2
+add
+pop local 1
+goto IF_FALSE_30
+label IF_TRUE_29
+// if statement
+push this 14
+push constant 2
+eq
+not
+if-goto IF_TRUE_31
+// let statement
+push constant 0
+pop local 0
+// let statement
+push local 3
+push constant 50
+call Math.multiply 2
+push local 2
+call Math.divide 2
+pop local 1
+// let statement
+push this 1
+push local 1
+push local 4
+call Math.multiply 2
+add
+pop local 1
+goto IF_FALSE_32
+label IF_TRUE_31
+// if statement
+push this 14
+push constant 3
+eq
+not
+if-goto IF_TRUE_33
+// let statement
+push constant 250
+pop local 1
+// let statement
+push local 2
+push constant 25
+neg
+call Math.multiply 2
+push local 3
+call Math.divide 2
+pop local 0
+// let statement
+push this 0
+push local 0
+push local 4
+call Math.multiply 2
+add
+pop local 0
+goto IF_FALSE_34
+label IF_TRUE_33
+// let statement
+push constant 0
+pop local 1
+// let statement
+push local 2
+push constant 25
+call Math.multiply 2
+push local 3
+call Math.divide 2
+pop local 0
+// let statement
+push this 0
+push local 0
+push local 4
+call Math.multiply 2
+add
+pop local 0
+label IF_FALSE_34
+label IF_FALSE_32
+label IF_FALSE_30
+// do statement
+// instance call
+push pointer 0
+push local 0
+push local 1
+call Ball.setDestination 3
+pop temp 0 
+// return statement 
+push constant 0 
+return
